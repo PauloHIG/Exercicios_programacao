@@ -1,4 +1,3 @@
-#!!!INCOMPLETO!!!
 #Jogo da Velha
 import sys
 def verLinhaColuna(lista:list):
