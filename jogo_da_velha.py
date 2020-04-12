@@ -1,12 +1,13 @@
 #Jogo da Velha
 import sys
 def verLinhaColuna(lista:list):
-	for i in range(3):
-		if lista[i][0] == 'X' and lista[i][0] == lista[i][1] and lista[i][1] == lista[i][2] and lista[i][0] == lista[i][2]:
+	for linha in lista:
+		if linha ==['X','X','X']:
 			return 'X'
-		elif lista[i][0] == 'O' and lista[i][0] == lista[i][1] and lista[i][1] == lista[i][2] and lista[i][0] == lista[i][2]:
+		elif linha==['O','O','O']:
 			return 'O'
-		elif lista[0][i] == 'X' and lista[0][i] == lista[1][i] and lista[1][i] == lista[2][i] and lista[0][i] == lista[2][i]:
+	for i in range(3):
+		if lista[0][i] == 'X' and lista[0][i] == lista[1][i] and lista[1][i] == lista[2][i] and lista[0][i] == lista[2][i]:
 			return 'X'
 		elif lista[0][i] == 'O' and lista[0][i] == lista[1][i] and lista[1][i] == lista[2][i] and lista[0][i] == lista[2][i]:
 			return 'O'
@@ -25,13 +26,13 @@ def verDiagonal(lista:list):
 def verDiagonal2(lista:list):
 	contx=0
 	conty=0
-	for i in range(3):
-		for j in range(3):
-			if i+j==2:
-				if lista[i][j] == 'X':
-					contx+=1
-				if lista[i][j] == 'O':
-					conty+=1
+	j=2
+	for i in range(3):#i diminui e j aumenta, dessa forma i+j sempre vai ser igual a 2(3 se começasse do 1)
+		if lista[i][j] == 'X':
+			contx+=1
+		if lista[i][j] == 'O':
+			conty+=1
+		j-=1
 	if contx ==3:
 		return 'X'
 	elif conty ==3:
