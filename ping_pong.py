@@ -1,4 +1,5 @@
 #Ping pong em Python
+#esse foi copiado de um tutorial do Youtube
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
