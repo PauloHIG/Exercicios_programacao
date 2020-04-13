@@ -1,11 +1,11 @@
 #Jogo da Velha
-import sys
 def verLinhaColuna(lista:list):
 	for linha in lista:
 		if linha ==['X','X','X']:
 			return 'X'
 		elif linha==['O','O','O']:
 			return 'O'
+	#não consegui fazer o mesmo para a coluna, acabei tendo que fazer as comparações if por if
 	for i in range(3):
 		if lista[0][i] == 'X' and lista[0][i] == lista[1][i] and lista[1][i] == lista[2][i] and lista[0][i] == lista[2][i]:
 			return 'X'
@@ -54,15 +54,14 @@ def verTudo(lista:list):
 			if msg == None:
 				msg = verDiagonal2(lista)
 				if msg == None:
-					msg = verVelha(lista)
-		
+					msg = verVelha(lista)#essa função deve ser sempre a ultima, pois ele entenda que um tabuleiro completamente preenchido é empate, mesmo se alguem tiver vencido
 	return msg
-def insereJogada(linhas:list,jogada):
+def insereJogada(lista:list,jogada):
 	while True:
 		#esse código aqui é para garantir que os jogadores só digitem números e 1 a 9 sem interromper o programa 
 		while True:
 			try:
-				pos = int(input('Digite a posição linha pra colocar {}(1-9): '.format(jogada)))#verifica se o valor é inteiro,
+				pos = int(input('Escolha a posição para colocar {}(1-9): '.format(jogada)))#verifica se o valor é inteiro,
 			except:
 				print('Somente números de 1 a 9')
 				continue #não permite que o código continue executando mesmo com o erro, o que faz isso é o pass
@@ -98,28 +97,21 @@ def insereJogada(linhas:list,jogada):
 		elif pos==6:
 			i=1
 			j=2
-		if type(tabuleiro[i][j])==int:
-			tabuleiro[i][j] = jogada
+		if type(lista[i][j])==int:
+			lista[i][j] = jogada
 			break
 		else:
 				print('Posição já preenchida')
-def renovaTabuleiro(lista:list):
-	cont=1
-	'''como os botões numericos do nosso teclado são de baixo para cima, eu tive que preencher o tabuleiro desse jeito
-		ao invés de um simples for i in range(3):, a idéia é facilitar o jogo usando apenas o teclado'''
-	for i in range(2,-1,-1):
-		for j in range (3):
-			lista[i][j]=cont
-			cont+=1
 def exibir(lista:list):
 	for linhas in lista:
 			for colunas in linhas:
 				print('|', colunas,'|',end='')#ok, só economizei umas 3 linhas, queria deixar o código mais limpo
 			print('')
-#criação do Tabuleiro,a ordem pode parecer estranha, mas fica fácil olhar para o teclado e jogar com os números nessa ordem
+#criação do Tabuleiro e das variáveis
+#a ordem do tabuleiro pode parecer estranha, mas fica fácil olhar para o teclado e jogar com os números nessa ordem
 tabuleiro = [[7,8,9],[4,5,6],[1,2,3]]
 msg = None
-vez = 'X'
+vez = 'X'#sempre vai começar com X, o jogo alterna de acordo com quem fez a ultima jogada, geralmente o vencedor ou o que começou caso dê empate
 pontX=0
 pontO=0
 #loop do jogo
@@ -145,16 +137,10 @@ while True:
 	exibir(tabuleiro)
 	print('Placar: \nX:{} O:{}'.format(pontX,pontO))
 	#decisão para continuar no loop
-	while True:
-		escolha=input('Quer continuar:(s/n): ')
-		if escolha in('s','n','S','N'):
-			break
-		else:
-			print('Somente S(Sim) ou N(Não)')
+	escolha=input('aperte qualquer tecla pra continuar ou N pra sair: ')
 	if escolha.lower() == 'n':
 		print('Saindo...')
 		break
-	elif escolha.lower() == 's':
-		renovaTabuleiro(tabuleiro)
+	else:
+		tabuleiro = [[7,8,9],[4,5,6],[1,2,3]]
 		msg=None
-sys.exit()
