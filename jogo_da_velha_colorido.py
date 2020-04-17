@@ -117,7 +117,7 @@ def exibir(lista:list):
 					cor='green'
 				else:
 					cor='white'
-				print('|',colored(colunas,cor),'|',end='')#ok, só economizei umas 3 linhas, queria deixar o código mais limpo
+				print('|',colored(colunas,cor),'|',end='')
 			print('')
 #criação do Tabuleiro e das variáveis
 tabuleiro = [[7,8,9],[4,5,6],[1,2,3]]#a ordem do tabuleiro pode parecer estranha, mas fica fácil olhar para o teclado e jogar com os números nessa ordem
