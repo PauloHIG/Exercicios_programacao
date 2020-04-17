@@ -15,3 +15,5 @@ print(ArrayBatata)
 
 arrayLivre = np.empty((5,5))
 print(arrayLivre)
+for linha in my_array:
+	print(linha)
