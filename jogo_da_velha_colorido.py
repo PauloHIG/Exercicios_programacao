@@ -144,7 +144,7 @@ while True:
 		pontO+=1
 		print('{} venceu!'.format(msg))
 	else:
-		print('Velha!')
+		print(colored('Velha!','red'))
 	exibir(tabuleiro)
 	print('Placar: \nX:{} O:{}'.format(pontX,pontO))
 	#decisão para continuar no loop
