@@ -64,7 +64,7 @@ def verTudo(lista:list):
 def insereJogada(lista:list,jogada):
 	cor=''
 	if jogada == 'X':
-		cor = 'blue'
+		cor = 'cyan'
 	elif jogada == 'O':
 		cor = 'green'
 	while True:
@@ -118,7 +118,7 @@ def exibir(lista:list):
 	for linhas in lista:
 			for colunas in linhas:
 				if colunas=='X':
-					cor='blue'
+					cor='cyan'
 				elif colunas=='O':
 					cor='green'
 				else:
@@ -145,7 +145,7 @@ while True:
 	#mensagens caso uma partida termine
 	if msg=='X':
 		pontX+=1
-		print('',colored(msg,'blue'),' venceu!')
+		print('',colored(msg,'cyan'),' venceu!')
 	elif msg=='O':
 		pontO+=1
 		print('',colored(msg,'green'),' venceu!')
