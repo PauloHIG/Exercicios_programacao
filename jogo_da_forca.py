@@ -1,11 +1,11 @@
 #jogo da forca
-palavra = 'Paulo Ito'
+palavra = 'Cenoura e Batata'
 palavraFinal=''
 palpite = ''
 tentativas=[' ']#lista que terá todas as letras tentadas anteriormente, já vem com o espaço
 forca=6
-dica='Meu nome'
-#está bem difente da versão anterior por causa de um codigo da internet
+dica='dois legumes'
+#está bem difente da versão anterior por causa de um codigo da internet, vi que tava fazendo tudo errado rsrsrs
 while True:
 	tentativas =[' ']
 	palavra = input('Digite a palavra para o outro jogador tentar descobrir\n')
