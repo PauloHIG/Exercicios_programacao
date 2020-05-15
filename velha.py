@@ -75,7 +75,7 @@ def insereJogada(lista:list,jogada):
 				pos = int(input(' '))#verifica se o valor é inteiro,
 			except:
 				print('Somente números de 1 a 9')
-				continue #não permite que o código continue executando mesmo com o erro, o que faz isso é o pass
+				continue #não permite que o código continue executando mesmo com o erro em um loop, o que faz isso é o pass
 			if pos<1 or pos>9:
 				print('Somente números de 1 a 9')
 				continue
