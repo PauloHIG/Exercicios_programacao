@@ -14,7 +14,21 @@ def jogada():
 			continue
 		break
 	return resposta
-def jogo():
+
+def escolha():
+	while True:
+		try:
+			escolha = int(input(""))
+		except:
+			print('Somente um número de 1 a 5')
+			continue
+		if escolha not in (1,2,3,4,5):
+			print('Somente um único número de 1 a 5')
+			continue
+		break
+	return escolha
+
+def jogoSoma():
 	contaAcertos = 0
 	global recordeSoma
 	while True:
@@ -31,7 +45,7 @@ def jogo():
 			certo = 'V'
 		else:
 			certo = 'F'
-		print('pontuação atual: {} recorde:{}'.format(contaAcertos,recordeSoma))
+		print('pontuação atual: {} recorde:{}'.format(contaAcertos,recordeSoma))#o récorde ainda não é gravado corretamente, ele desaparece quando o programa é fechado
 		print('Esta conta está certa?')
 		print('{} + {} = {}'.format(n1,n2,n1+n2+ref))
 		resposta = jogada()
@@ -42,9 +56,26 @@ def jogo():
 			contaAcertos += 1
 		if contaAcertos > recordeSoma:
 			recordeSoma = contaAcertos
+
+
+
 while True:
-	jogo()
-	continuar = input('Você quer continuar jogando? aperte qualquer tecla para continuar ou N para sair')
-	if continuar.upper() == 'N':
-		print('Saindo do jogo')
+	print('------Jogo de Matemática-------')
+	print('Escolha uma operação')
+	print('1-Soma')
+	print('2-Subtração')
+	print('3-multiplicação')
+	print('4-divisão')
+	print('5-sair')
+	Escolha = escolha()
+	if Escolha == 1:
+		jogoSoma()
+	elif Escolha == 2:
+		print('Em breve')
+	elif Escolha == 3:
+		print('Em breve')
+	elif Escolha == 4:
+		print('Em breve')
+	elif Escolha == 5:
+		print('Saindo do programa...')
 		break
