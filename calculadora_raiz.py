@@ -1,6 +1,5 @@
 #Criar operações usando apenas soma e subtração
 #ainda está ruim, mas já deu pra ter uma ideia do que divisão e multiplicação realmente são feitos
-#!!!INCOMPLETO!!!
 def multiplicação(n1,n2):
 	if type(n2) is int: 
 		i=1
