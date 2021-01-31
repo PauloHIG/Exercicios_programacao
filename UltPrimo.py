@@ -13,6 +13,8 @@ def UltP(n):#função ultimo primo
 			if primo == True:
 				print('{} é o último numero prímo de {}'.format(i,n))
 				break
+		if primo == False:
+			print('O numero {} é composto'.format(n))
 		break
 
 def verPrimo(n):#retorna falso se o número não for primo
