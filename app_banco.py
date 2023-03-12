@@ -38,7 +38,7 @@ def sacar():
 		operacoes += f'- R$ {saque:.2f}\n'
 		
 def extrato():
-	print(f'Operações realizadas hoje:\n{operacoes}\nSaldo atual da conta: R$ \n{saldo:.2f}')
+	print(f'Operações realizadas hoje:\n{operacoes}\nSaldo atual da conta: \nR$ {saldo:.2f}')
 
 
 while True:
