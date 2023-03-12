@@ -54,10 +54,12 @@ Aperte o número correspondente a operação desejada
 	if opcao == 1:
 		depositar()
 	if opcao == 2:
-		if contLim<3:
-			sacar()
+		if saldo <= 0:
+			print('!!!Você não possui saldo para sacar!!!')
+		if contLim ==3:
+			print('!!!!Limite diario de saques atingido!!!')
 		else:
-			print('Limite diario de saques atingido')
+			sacar()
 	if opcao == 3:
 		extrato()
 	if opcao == 4:
