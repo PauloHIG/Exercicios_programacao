@@ -9,7 +9,8 @@ recordeMulti = 0
 recordeDiv = 0
 
 def jogada():
-	while True:#mais um try para o usuario digitar o que é pedido sem interromper o programa
+	#apenas para validar os inputs do usuario e impedir erros
+	while True:
 		try:
 			resposta = input('V(verdadeiro) ou F(falso)\n')
 		except:
