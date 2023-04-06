@@ -9,8 +9,7 @@ recordeMulti = 0
 recordeDiv = 0
 
 def jogada():
-	#apenas para validar os inputs do usuario e impedir erros
-	while True:
+	while True:#mais um try para o usuario digitar o que é pedido sem interromper o programa
 		try:
 			resposta = input('V(verdadeiro) ou F(falso)\n')
 		except:
@@ -117,7 +116,7 @@ def jogoMulti():
 			recordeMulti = contaAcertos
 def jogoDiv():
 	contaAcertos = 0
-	global recordeDiv
+	global recordeDiv #TO DO, usar variável global não é um boa pratica
 	while True:
 		n1 = randint(1,10)
 		n2 = randint(1,10)
@@ -151,16 +150,11 @@ while True:
 	print('3-multiplicação')
 	print('4-divisão')
 	print('5-sair')
-	Escolha = escolha()
-	if Escolha == 1:
-		jogoSoma()
-	elif Escolha == 2:
-		jogoSub()
-	elif Escolha == 3:
-		jogoMulti()
-	elif Escolha == 4:
-		jogoDiv()
-	elif Escolha == 5:
+
+	op = escolha()
+	dic_opcoes = {1:jogoSoma,2:jogoSub,3:jogoMulti,4:jogoDiv}
+	if op == 5:
 		print('Saindo do programa...')
 		sys.exit()
 		break
+	dic_opcoes[op]()
