@@ -1,0 +1,1 @@
+print('Não seja apegado ao código, faça qualquer porcaria e apague')
