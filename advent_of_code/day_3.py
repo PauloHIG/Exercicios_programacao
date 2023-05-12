@@ -1,5 +1,5 @@
 # https://adventofcode.com/2022/day/3
-with open("day_3.txt") as input_desafio:
+with open("inputs_desafios/day_3.txt") as input_desafio:
     rucksacks = input_desafio.read()
 def procuraItemComum(metade1,metade2):
     """Retorna o valor do peso da letra em comum entre as duas metades do texto de acordo com o desafio"""

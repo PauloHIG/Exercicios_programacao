@@ -11,7 +11,7 @@ import java.util.Set;
 public class day4{
     public static void main(String[] args) {
 
-        String inputDesafio  = lerArquivo("advent_of_code/day4.txt");
+        String inputDesafio  = lerArquivo("advent_of_code/inputs_desafios/day4.txt");
         
         String[] pares = inputDesafio.split("\n");
         //parte 1
